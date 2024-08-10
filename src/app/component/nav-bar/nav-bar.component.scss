@@ -1,0 +1,11 @@
+app-nav-bar{
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  app-nav-bar{
+    position: absolute;
+  }
+}
