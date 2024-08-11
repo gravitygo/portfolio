@@ -39,6 +39,7 @@
             "styles": [
               "src/styles.scss"
             ],
+            "baseHref": "/portfolio/",
             "scripts": []
           },
           "configurations": {
