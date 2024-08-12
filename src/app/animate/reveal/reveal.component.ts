@@ -5,12 +5,14 @@ import {
   OnInit,
   AfterViewInit,
   EventEmitter,
+  ViewEncapsulation
 } from '@angular/core';
 
 @Component({
   selector: 'app-reveal',
   templateUrl: './reveal.component.html',
-  styleUrl: './reveal.component.scss'
+  styleUrl: './reveal.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class RevealComponent implements OnInit, AfterViewInit {
   @Output() inView = new EventEmitter<boolean>();

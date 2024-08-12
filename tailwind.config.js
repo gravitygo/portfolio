@@ -16,6 +16,7 @@ module.exports = {
       "mdi",
       "material-symbols"
     ]),
+    require('tailwind-scrollbar'),
   ],
 }
 

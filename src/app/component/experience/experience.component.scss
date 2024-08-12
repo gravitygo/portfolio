@@ -1,0 +1,41 @@
+
+app-experience{
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: start;
+  min-height: calc(100vh - 6rem);
+}
+
+@media (min-width: 640px){
+  app-experience{
+    align-items:center;
+  }
+}
+
+/* Hide scrollbar buttons for Webkit-based browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Customize the scrollbar width */
+::-webkit-scrollbar {
+  width: 6px; /* Total width including margin */
+}
+
+/* Customize the scrollbar thumb */
+.dark ::-webkit-scrollbar-thumb {
+  background-color: rgb(14 116 144 / var(--tw-bg-opacity));
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(103 232 249 / var(--tw-bg-opacity));
+  border-radius: 10px;
+  border: 2px solid transparent; /* Create the appearance of a margin */
+  box-sizing: border-box; /* Ensure the border is counted within the width */
+}
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: #00000000; /* Customize scrollbar track color */
+  margin-right: 2px; /* Add 2px margin on the right side */
+}
