@@ -1,3 +1,5 @@
+import { addIconSelectors } from '@iconify/tailwind';
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'selector',
@@ -7,6 +9,13 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    addIconSelectors([
+      "ic",
+      "mingcute",
+      "mdi",
+      "material-symbols"
+    ]),
+  ],
 }
 
