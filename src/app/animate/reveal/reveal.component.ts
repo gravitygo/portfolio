@@ -27,13 +27,13 @@ export class RevealComponent implements OnInit, AfterViewInit {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          console.log(entry)
           if (entry.isIntersecting) {
             this.inView.emit(true)
             observer.disconnect();
           }
         });
       },
-      { threshold: 0.1 }
     );
 
     observer.observe(this.el.nativeElement);
