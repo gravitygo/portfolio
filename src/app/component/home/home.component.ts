@@ -17,23 +17,32 @@ export class HomeComponent implements OnInit {
   socials = [
     {
       "link": "https://www.facebook.com/GravityGo16",
-      "icon": "ic--baseline-facebook"
+      "icon": "ic--baseline-facebook",
+      "name": "facebook"
     },
     {
-      "link": "discordapp.com/users/326675091188613123",
-      "icon": "ic--baseline-discord"
+      "link": "https://discord.com/users/326675091188613123",
+      "icon": "ic--baseline-discord",
+      "name": "discord"
+
     },
     {
       "link": "https://www.linkedin.com/in/chyle-lee/",
-      "icon": "mdi--linkedin"
+      "icon": "mdi--linkedin",
+      "name": "linkedin"
+
     },
     {
       "link": "https://github.com/gravitygo",
-      "icon": "mingcute--github-fill"
+      "icon": "mingcute--github-fill",
+      "name": "github"
+
     },
     {
       "link": "https://mail.google.com/mail/u/0/?fs=1&to=chyle.andre.lee@gmail.com&su=%22Let%27s+Connect!%22&tf=cm",
-      "icon": "material-symbols--mail"
+      "icon": "material-symbols--mail",
+      "name": "mail"
+
     },
   ]
 

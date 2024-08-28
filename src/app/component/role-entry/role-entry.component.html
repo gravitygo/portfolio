@@ -1,0 +1,27 @@
+<app-reveal class="block px-3"
+  [parent] = "scrollEntry"
+  (inView) = "setInView($event)">
+  <div class="flex flex-row justify-between">
+    <div class="flex flex-col items-start">
+      <p
+        class="text-md text-emerald-600 dark:text-emerald-400 inline-block before:absolute before:h-full relative before:w-full before:left-0 before:top-0 z-20 before:transition-all before:duration-500 before:ease-in before:bg-emerald-600 before:dark:bg-emerald-400 overflow-hidden"
+        [ngClass]="{ 'before:left-full': inView, 'before:left-0': !inView}"
+      >{{role?.role}}</p>
+      <p
+        class="inline-block before:absolute before:h-full relative before:w-full before:left-0 before:top-0 z-20 before:transition-all before:duration-500 before:ease-in before:bg-white before:dark:bg-white overflow-hidden"
+        [ngClass]="{ 'before:left-full': inView, 'before:left-0': !inView}"
+      >{{role?.company}}</p>
+    </div>
+    <div class="md:flex md:flex-col md:items-end hidden">
+      <p
+        class="inline-block before:absolute before:h-full relative before:w-full before:left-0 before:top-0 z-20 before:transition-all before:duration-500 before:ease-in before:bg-white before:dark:bg-white overflow-hidden"
+        [ngClass]="{ 'before:left-full': inView, 'before:left-0': !inView}"
+      >{{role?.location}}</p>
+      <p
+        class="inline-block before:absolute before:h-full relative before:w-full before:left-0 before:top-0 z-20 before:transition-all before:duration-500 before:ease-in before:bg-white before:dark:bg-white overflow-hidden"
+        [ngClass]="{ 'before:left-full': inView, 'before:left-0': !inView}"
+      >{{role?.date}}</p>
+    </div>
+  </div>
+  <hr class="my-3" [ngClass]="{'hidden': last}">
+</app-reveal>

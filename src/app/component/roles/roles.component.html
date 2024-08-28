@@ -1,0 +1,3 @@
+<div class="px-3" *ngFor="let role of roles; index as roleIndex">
+  <app-role-entry [role]="role" [last]="roleIndex == roles.length-1"/>
+</div>

@@ -1,11 +1,13 @@
 import {
   Component,
   Output,
+  Input,
   ElementRef,
-  OnInit,
   AfterViewInit,
   EventEmitter,
-  ViewEncapsulation
+  ViewEncapsulation,
+  OnChanges,
+  SimpleChanges
 } from '@angular/core';
 
 @Component({
@@ -14,28 +16,45 @@ import {
   styleUrl: './reveal.component.scss',
   encapsulation: ViewEncapsulation.None
 })
-export class RevealComponent implements OnInit, AfterViewInit {
+export class RevealComponent implements AfterViewInit, OnChanges {
   @Output() inView = new EventEmitter<boolean>();
+  @Input() parent?: Element;
+  private observer?: IntersectionObserver;
 
   constructor(private el: ElementRef) {
     this.inView.emit(false)
   }
 
-  ngOnInit(): void { }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['parent'] && !changes['parent'].firstChange) {
+      this.updateObserver();
+    }
+  }
 
   ngAfterViewInit(): void {
-    const observer = new IntersectionObserver(
+    this.updateObserver()
+  }
+  private updateObserver() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+    const root = this.parent || null;
+
+    this.observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log(entry)
           if (entry.isIntersecting) {
             this.inView.emit(true)
-            observer.disconnect();
+            this.observer?.disconnect();
           }
         });
       },
+      {
+        root: root,
+      }
     );
 
-    observer.observe(this.el.nativeElement);
+    if (this.el.nativeElement)
+      this.observer.observe(this.el.nativeElement);
   }
 }

@@ -9,6 +9,10 @@ import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { ExperienceComponent } from './component/experience/experience.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { RevealComponent } from './animate/reveal/reveal.component';
+import { TabComponent } from './component/tab/tab.component';
+import { SkillsComponent } from './component/skills/skills.component';
+import { RolesComponent } from './component/roles/roles.component';
+import { RoleEntryComponent } from './component/role-entry/role-entry.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { RevealComponent } from './animate/reveal/reveal.component';
     NavBarComponent,
     ExperienceComponent,
     ContactComponent,
-    RevealComponent
+    RevealComponent,
+    TabComponent,
+    SkillsComponent,
+    RolesComponent,
+    RoleEntryComponent
   ],
   imports: [
     BrowserModule,
