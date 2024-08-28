@@ -4,8 +4,14 @@
   (inView)="setInView($event)">
   <app-tab
     class="w-[80%] mx-auto flex flex-col gap-2"
-    [tabs]="tabs" (emitActive)="changeTab($event)">
-    <app-skills [skills] = "skills" [ngClass]="{'hidden': active!=0}" class="gap-3 flex-col flex"/>
-      <app-roles [roles] = "roles" [ngClass]="{'hidden': active!=1}" />
+    [tabs]="tabs"
+    (emitActive)="changeTab($event)">
+    <app-skills
+      [skills] = "skills"
+      [ngClass]="{'hidden': active!=0}"
+      class="gap-3 flex-col flex"/>
+      <app-roles
+        [roles] = "roles"
+        [ngClass]="{'hidden': active!=1}" />
   </app-tab>
 </app-reveal>

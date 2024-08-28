@@ -13,6 +13,7 @@ import { TabComponent } from './component/tab/tab.component';
 import { SkillsComponent } from './component/skills/skills.component';
 import { RolesComponent } from './component/roles/roles.component';
 import { RoleEntryComponent } from './component/role-entry/role-entry.component';
+import { ProjectComponent } from './component/project/project.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RoleEntryComponent } from './component/role-entry/role-entry.component'
     TabComponent,
     SkillsComponent,
     RolesComponent,
-    RoleEntryComponent
+    RoleEntryComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
