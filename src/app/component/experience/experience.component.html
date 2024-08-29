@@ -6,12 +6,19 @@
     class="w-[80%] mx-auto flex flex-col gap-2"
     [tabs]="tabs"
     (emitActive)="changeTab($event)">
-    <app-skills
-      [skills] = "skills"
-      [ngClass]="{'hidden': active!=0}"
-      class="gap-3 flex-col flex"/>
-      <app-roles
-        [roles] = "roles"
-        [ngClass]="{'hidden': active!=1}" />
+    <ng-container *ngIf="active==2">
+      <app-skills
+        [skills] = "skills"
+        class="gap-3 flex-col flex"
+      />
+    </ng-container>
+
+    <ng-container *ngIf="active==1">
+      <app-roles [roles] = "roles"/>
+    </ng-container>
+
+    <ng-container *ngIf="active==0">
+      <app-projects [projects]="projects"/>
+    </ng-container>
   </app-tab>
 </app-reveal>

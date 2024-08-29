@@ -9,6 +9,9 @@ export class ThemeService {
   private $modeSubject: BehaviorSubject<boolean>;
 
   constructor() {
+    if (localStorage.getItem('dark-mode') == null)
+      localStorage.setItem('dark-mode', 'true');
+
     this.darkMode = localStorage.getItem('dark-mode') === 'true';
     this.$modeSubject = new BehaviorSubject<boolean>(this.isDarkMode());
     this.updateBodyClass();
