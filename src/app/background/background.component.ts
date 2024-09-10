@@ -7,6 +7,7 @@ import anime from 'animejs';
   styleUrl: './background.component.scss'
 })
 export class BackgroundComponent {
+
   ngAfterViewInit() {
     const path1 = [
       "M-304 125.512C-211.5 37.0124 380.87 -7.62341 154.5 178.512C-124 407.512 390.667 512.846 504.5 306.512M32 718.012C80.6667 663.346 243.3 568.712 504.5 627.512C765.7 686.312 886.667 662.512 880.5 602.512M504.5 297.012C573.167 182.346 767.6 12.7124 996 251.512",

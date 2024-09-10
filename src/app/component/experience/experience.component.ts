@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { ThemeService } from '../../service/theme.service';
 import { Subscription } from 'rxjs';
 
@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
   encapsulation: ViewEncapsulation.None
 })
 export class ExperienceComponent implements OnInit, OnDestroy {
+  @ViewChild('parallaxContainer') parallaxContainer!: ElementRef;
   private $modeSubscription?: Subscription;
   inView = false;
   tabs = ["Skills", "Roles", "Projects"]
@@ -76,15 +77,71 @@ export class ExperienceComponent implements OnInit, OnDestroy {
 
   projects = [
     {
-      name: "PlantMate",
+      name: "Practrack",
       role: "Fullstack Developer",
       year: 2023,
+      path: "Practrack",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       stack: [
         "Kotlin",
         "Figma"
       ],
-    }
+    },
+    {
+      name: "ProfsToPick",
+      role: "Fullstack Developer",
+      year: 2023,
+      path: "ProfsToPick",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      stack: [
+        "Kotlin",
+        "Figma"
+      ],
+    },
+    {
+      name: "PlantMate",
+      role: "Fullstack Developer",
+      year: 2023,
+      path: "PlantMate",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      stack: [
+        "Kotlin",
+        "Figma"
+      ],
+    },
+    {
+      name: "Animal Chess",
+      role: "Fullstack Developer",
+      year: 2023,
+      path: "AnimalChess",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      stack: [
+        "Kotlin",
+        "Figma"
+      ],
+    },
+    {
+      name: "Diner",
+      role: "Fullstack Developer",
+      year: 2023,
+      path: "Diner",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      stack: [
+        "Kotlin",
+        "Figma"
+      ],
+    },
+    {
+      name: "GravitySmash",
+      role: "Fullstack Developer",
+      year: 2023,
+      path: "GravitySmash",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      stack: [
+        "Kotlin",
+        "Figma"
+      ],
+    },
   ]
   constructor(private themeService: ThemeService) {
     this.changeMode(themeService.isDarkMode())
@@ -110,4 +167,26 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   changeTab(tab: number) {
     this.active = tab
   }
+
+  private isVisible = false;
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    this.applyParallaxEffect();
+  }
+
+  private applyParallaxEffect() {
+    const scrollY = window.scrollY;
+    const rect = this.parallaxContainer.nativeElement.getBoundingClientRect();
+    const sectionTop = rect.top + scrollY;
+    console.log(scrollY, rect.top);
+
+    // Calculate the parallax effect
+    const parallaxRate = .8; // Adjust as needed
+    const translateY = Math.max(0, (sectionTop - scrollY) * parallaxRate);
+
+    // Apply the parallax effect
+    //this.parallaxContainer.nativeElement!.style.transform = `translateY(${translateY}px)`;
+    this.parallaxContainer.nativeElement!.style.transform = `translateY( ${(rect.top * -0.5) > 0 ? (rect.top * -0.5) : 0}px)`;
+  }
+
 }

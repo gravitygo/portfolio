@@ -14,7 +14,7 @@ import { SkillsComponent } from './component/skills/skills.component';
 import { RolesComponent } from './component/roles/roles.component';
 import { RoleEntryComponent } from './component/role-entry/role-entry.component';
 import { ProjectsComponent } from './component/projects/projects.component';
-import { ProjectEntryComponent } from './project-entry/project-entry.component';
+import { ProjectEntryComponent } from './component/project-entry/project-entry.component';
 
 @NgModule({
   declarations: [

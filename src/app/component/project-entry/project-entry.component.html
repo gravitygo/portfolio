@@ -1,0 +1,42 @@
+<div
+  class="flex gap-5 flex-col md:max-h-[20rem] justify-center"
+  [ngClass]="{'md:flex-row': index%2==0, 'md:flex-row-reverse': index%2==1}"
+>
+  <img
+    [src]="'assets/projects/'+project.path+'.png'" [alt]="project.path"
+    class=" object-cover m-auto md:m-0 h-[20rem] rounded-xl md:rounded-none"
+    [ngClass]="{'md:rounded-l-xl': index%2==0, 'md:rounded-r-xl': index%2==1}"
+  >
+  <div
+    class="p-3 md:w-2/3 w-full md:rounded-none rounded-xl dark:bg-cyan-900 bg-cyan-100 flex flex-col"
+    [ngClass]="{'md:rounded-l-xl': index%2!=0, 'md:rounded-r-xl': index%2!=1}"
+  >
+    <h2 class="text-emerald-600 dark:text-emerald-400 font-medium text-lg">{{project.name}} | {{project.year}}</h2>
+    <h2 class="text-sm">{{project.role}}</h2>
+
+    <p class="leading-relaxed mb-auto mt-3 w-full ">{{project.description}}</p>
+
+    <div class="flex gap-2 justify-end mt-auto">
+      <span class="border-slate-500 rounded-full px-3 border-2" *ngFor="let stack of project.stack">{{stack}}</span>
+    </div>
+    <hr class="my-2">
+
+    <div class="gap-2 flex sm:self-start self-center pt-3 pb-5">
+        <a
+          aria-label="github repository"
+          href="" class="text-white flex text-xl pointer-events-auto">
+          <div
+            class="transition-scale transition-transform duration-500 ease-in-out bg-emerald-500 hover:duration-200 hover:delay-0 hover:bg-emerald-600 dark:bg-emerald-600 hover:dark:bg-emerald-700 flex justify-center items-center w-[3rem] h-[3rem] rounded-full"
+          >
+              <span class="iconify mingcute--github-fill"></span>
+          </div>
+        </a>
+    </div>
+
+  </div>
+</div>
+
+
+<!--
+            [ngClass]="{'scale-100 translate-x-0': inView, 'scale-0 -translate-x-[3rem]': !inView}"
+-->
