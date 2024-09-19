@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { ThemeService } from '../../service/theme.service';
 import { Subscription } from 'rxjs';
+import { generator } from '../../utils/generate-blob.utils';
 
 @Component({
   selector: 'app-experience',
@@ -145,6 +146,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   ]
   constructor(private themeService: ThemeService) {
     this.changeMode(themeService.isDarkMode())
+    console.log(generator())
   }
 
   changeMode(mode: boolean) {
