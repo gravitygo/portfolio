@@ -16,6 +16,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   tabs = ["Skills", "Roles", "Projects"]
   mode!: string;
   active = 0;
+  svg: string = "";
 
   skills = {
     "Language": ["c", "cs", "cpp", "css", "html", "java", "js", "kotlin", "lua", "php", "py", "ts"],
@@ -146,7 +147,7 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   ]
   constructor(private themeService: ThemeService) {
     this.changeMode(themeService.isDarkMode())
-    console.log(generator())
+    this.svg = generator().path;
   }
 
   changeMode(mode: boolean) {
@@ -169,26 +170,4 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   changeTab(tab: number) {
     this.active = tab
   }
-
-  private isVisible = false;
-  @HostListener('window:scroll', ['$event'])
-  onScroll() {
-    this.applyParallaxEffect();
-  }
-
-  private applyParallaxEffect() {
-    const scrollY = window.scrollY;
-    const rect = this.parallaxContainer.nativeElement.getBoundingClientRect();
-    const sectionTop = rect.top + scrollY;
-    console.log(scrollY, rect.top);
-
-    // Calculate the parallax effect
-    const parallaxRate = .8; // Adjust as needed
-    const translateY = Math.max(0, (sectionTop - scrollY) * parallaxRate);
-
-    // Apply the parallax effect
-    //this.parallaxContainer.nativeElement!.style.transform = `translateY(${translateY}px)`;
-    this.parallaxContainer.nativeElement!.style.transform = `translateY( ${(rect.top * -0.5) > 0 ? (rect.top * -0.5) : 0}px)`;
-  }
-
 }
