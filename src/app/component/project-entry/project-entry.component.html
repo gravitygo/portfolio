@@ -1,28 +1,28 @@
 <div
-  class="relative flex flex-col justify-center gap-5 md:max-h-[20rem] shadow md:shadow-none before:bg-white before:dark:bg-black before:md:dark:bg-transparent before:md:bg-transparent before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-xl before:mix-blend-soft-light before:md:filter-none before:backdrop-blur-2xl"
+  class="relative flex flex-col justify-center gap-5 lg:max-h-[20rem] shadow md:shadow-none before:bg-white before:dark:bg-black before:md:dark:bg-transparent before:md:bg-transparent before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-xl before:mix-blend-overflow before:md:filter-none before:backdrop-blur-2xl before:md:backdrop-blur-none"
   [ngClass]="{'md:flex-row': index%2==0, 'md:flex-row-reverse': index%2==1}"
 >
-  <app-blob *ngIf="index%2==0" class="blur absolute top-[10%] z-[-1] h-[25rem] w-[25rem]" [ngClass]="{'left-[-10%]': index/2%2==1, 'right-[-10%]':index/2%2==0}"></app-blob>
+  <app-blob *ngIf="index%2==0" class="blur absolute top-[10%] z-[-2] h-[25rem] w-[25rem]" [ngClass]="{'left-[-10%]': index/2%2==1, 'right-[-10%]':index/2%2==0}"></app-blob>
   <img
     [src]="'assets/projects/'+project.path+'.png'" [alt]="project.path"
-    class="shadow m-auto h-fill md:h-[20rem] rounded-t-xl object-cover md:m-0 md:rounded-none"
+    class="shadow m-auto h-fill md:w-[50%] lg:h-[20rem] rounded-t-xl object-cover md:m-0 md:rounded-none"
     [ngClass]="{'md:rounded-l-xl': index%2==0, 'md:rounded-r-xl': index%2==1}"
   >
   <div
-    class="md:shadow dark:text-white before:md:bg-white before:md:dark:bg-black relative flex w-full flex-col rounded-xl p-3 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-xl before:md:mix-blend-soft-light before:md:backdrop-blur-2xl md:w-2/3 md:rounded-none before:md:h-[20rem] before:md:rounded-none"
+    class="md:shadow dark:text-white before:md:bg-white before:md:dark:bg-black relative flex w-full flex-col rounded-xl p-3 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-xl before:md:mix-blend-soft-light before:md:backdrop-blur-2xl md:w-2/3 md:rounded-none before:lg:h-[20rem] before:md:rounded-none"
     [ngClass]="{'before:md:rounded-l-xl md:rounded-l-xl': index%2!=0, 'before:md:rounded-r-xl md:rounded-r-xl': index%2!=1}"
   >
     <h2 class="dark:text-emerald-400 text-lg font-medium text-emerald-600">{{project.name}} | {{project.year}}</h2>
     <h2 class="text-sm">{{project.role}}</h2>
 
-    <p class="mb-auto mt-3 w-full leading-relaxed ">{{project.description}}</p>
+    <p class="mb-auto mt-3 w-fill h-fill leading-relaxed ">{{project.description}}</p>
 
     <div class="mt-auto flex justify-end gap-2">
       <span class="rounded-full border-2 border-slate-500 px-3" *ngFor="let stack of project.stack">{{stack}}</span>
     </div>
     <hr class="my-2">
 
-    <div class="flex gap-2 self-center pb-5 pt-3 sm:self-start">
+    <div class="flex gap-2 self-center pt-3 sm:self-start">
         <a
           aria-label="github repository"
           href="" class="pointer-events-auto flex text-xl text-white">
