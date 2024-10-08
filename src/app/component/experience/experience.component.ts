@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { ThemeService } from '../../service/theme.service';
 import { Subscription } from 'rxjs';
-import { generator } from '../../utils/generate-blob.utils';
 
 @Component({
   selector: 'app-experience',
@@ -10,13 +9,11 @@ import { generator } from '../../utils/generate-blob.utils';
   encapsulation: ViewEncapsulation.None
 })
 export class ExperienceComponent implements OnInit, OnDestroy {
-  @ViewChild('parallaxContainer') parallaxContainer!: ElementRef;
   private $modeSubscription?: Subscription;
   inView = false;
   tabs = ["Skills", "Roles", "Projects"]
   mode!: string;
   active = 0;
-  svg: string = "";
 
   skills = {
     "Language": ["c", "cs", "cpp", "css", "html", "java", "js", "kotlin", "lua", "php", "py", "ts"],
@@ -147,7 +144,6 @@ export class ExperienceComponent implements OnInit, OnDestroy {
   ]
   constructor(private themeService: ThemeService) {
     this.changeMode(themeService.isDarkMode())
-    this.svg = generator().path;
   }
 
   changeMode(mode: boolean) {

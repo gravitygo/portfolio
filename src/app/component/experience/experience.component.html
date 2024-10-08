@@ -1,30 +1,43 @@
-<app-reveal
-  class="z-0 grow h-full flex flex-col justify-center items-center text-neutral-950 dark:text-neutral-50 gap-2 pb-5 sm:pb-0 transition-transform transition-scale duration-500 ease-in-out"
-  [ngClass]="{'scale-100 translate-x-0': inView, 'scale-0 -translate-x-[50%]': !inView}"
-  (inView)="setInView($event)">
-  <app-tab
-    class="w-[80%] mx-auto flex flex-col gap-2"
-    [tabs]="tabs"
-    (emitActive)="changeTab($event)">
-    <ng-container *ngIf="active==2">
-      <app-skills
-        [skills] = "skills"
-        class="gap-3 flex-col flex"
-      />
-    </ng-container>
+<div class="flex flex-col min-h-[100vh] max-w-[100vw]">
+<!--  <app-reveal-->
+<!--    class="z-0 grow h-full flex flex-col justify-center items-center text-neutral-950 dark:text-neutral-50 gap-2 pb-5 sm:pb-0 transition-transform transition-scale duration-500 ease-in-out"-->
+<!--    [ngClass]="{'scale-100 translate-x-0': inView, 'scale-0 -translate-x-[50%]': !inView}"-->
+<!--    (inView)="setInView($event)">-->
+<!--    <app-tab-->
+<!--      class="mt-20 w-[80%] mx-auto flex flex-col gap-2"-->
+<!--      [tabs]="tabs"-->
+<!--      (emitActive)="changeTab($event)">-->
+<!--      <ng-container *ngIf="active==2">-->
+<!--        <app-skills-->
+<!--          [skills] = "skills"-->
+<!--          class="gap-3 flex-col flex"-->
+<!--        />-->
+<!--      </ng-container>-->
+<!---->
+<!--      <ng-container *ngIf="active==1">-->
+<!--        <app-roles [roles] = "roles"/>-->
+<!--      </ng-container>-->
+<!---->
+<!--      <ng-container *ngIf="active==0">-->
+<!--        <app-projects [projects]="projects"/>-->
+<!--      </ng-container>-->
+<!--    </app-tab>-->
+<!--  </app-reveal>-->
 
-    <ng-container *ngIf="active==1">
-      <app-roles [roles] = "roles"/>
-    </ng-container>
-
-    <ng-container *ngIf="active==0">
-      <app-projects [projects]="projects"/>
-    </ng-container>
-  </app-tab>
-  <div class="h-[300vh] flex flex-col justify-start bg-gradient-to-b from-cyan-500 to-red-500" >
-    <svg class="w-full" #parallaxContainer viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#FF0066" [attr.d]="svg" />
-    </svg>
-  </div>
-</app-reveal>
-
+  <app-reveal>
+        <app-projects [projects]="projects"/>
+  </app-reveal>
+  <app-reveal class="z-0">
+        <app-skills
+          [skills] = "skills"
+          class="gap-3 flex-col flex"
+        />
+  </app-reveal>
+  <app-reveal
+    class="z-0 grow h-full flex flex-col justify-center items-center text-neutral-950 dark:text-neutral-50 gap-2 pb-5 sm:pb-0 transition-transform transition-scale duration-500 ease-in-out"
+    [ngClass]="{'scale-100 translate-x-0': inView, 'scale-0 -translate-x-[50%]': !inView}"
+    (inView)="setInView($event)"
+  >
+        <app-roles [roles] = "roles"/>
+  </app-reveal>
+</div>

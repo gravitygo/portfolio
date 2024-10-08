@@ -1,7 +1,7 @@
 <app-reveal
   class="z-0"
   (inView)="setInView($event)">
-  <div class="sm:min-h-full mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center items-center gap-6 text-neutral-900 dark:text-neutral-50 text-center sm:text-left">
+  <div class="sm:min-h-full h-screen mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center items-center gap-6 text-neutral-900 dark:text-neutral-50 text-center sm:text-left">
     <div class="sm:hidden flex flex-col typing-container">
       <h1 class="text-3xl">
         Hi, I'm <span class="typing-text text-sky-500 dark:text-sky-600">{{ nameText }}</span>
@@ -58,3 +58,5 @@
     </div>
   </div>
 </app-reveal>
+<hr class="mx-auto border-dotted border-t-[1rem] w-[20%] md:w-[8%] border-emerald-300 dark:border-emerald-800 mb-24">
+<app-experience class="mx-auto max-w-7xl"></app-experience>

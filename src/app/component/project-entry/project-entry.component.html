@@ -1,32 +1,33 @@
 <div
-  class="flex gap-5 flex-col md:max-h-[20rem] justify-center"
+  class="relative flex flex-col justify-center gap-5 md:max-h-[20rem] shadow md:shadow-none before:bg-white before:dark:bg-black before:md:dark:bg-transparent before:md:bg-transparent before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-xl before:mix-blend-soft-light before:md:filter-none before:backdrop-blur-2xl"
   [ngClass]="{'md:flex-row': index%2==0, 'md:flex-row-reverse': index%2==1}"
 >
+  <app-blob *ngIf="index%2==0" class="blur absolute top-[10%] z-[-1] h-[25rem] w-[25rem]" [ngClass]="{'left-[-10%]': index/2%2==1, 'right-[-10%]':index/2%2==0}"></app-blob>
   <img
     [src]="'assets/projects/'+project.path+'.png'" [alt]="project.path"
-    class=" object-cover m-auto md:m-0 h-[20rem] rounded-xl md:rounded-none"
+    class="shadow m-auto h-fill md:h-[20rem] rounded-t-xl object-cover md:m-0 md:rounded-none"
     [ngClass]="{'md:rounded-l-xl': index%2==0, 'md:rounded-r-xl': index%2==1}"
   >
   <div
-    class="p-3 md:w-2/3 w-full md:rounded-none rounded-xl dark:bg-cyan-900 bg-cyan-100 flex flex-col"
-    [ngClass]="{'md:rounded-l-xl': index%2!=0, 'md:rounded-r-xl': index%2!=1}"
+    class="md:shadow dark:text-white before:md:bg-white before:md:dark:bg-black relative flex w-full flex-col rounded-xl p-3 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:z-[-1] before:h-full before:w-full before:rounded-xl before:md:mix-blend-soft-light before:md:backdrop-blur-2xl md:w-2/3 md:rounded-none before:md:h-[20rem] before:md:rounded-none"
+    [ngClass]="{'before:md:rounded-l-xl md:rounded-l-xl': index%2!=0, 'before:md:rounded-r-xl md:rounded-r-xl': index%2!=1}"
   >
-    <h2 class="text-emerald-600 dark:text-emerald-400 font-medium text-lg">{{project.name}} | {{project.year}}</h2>
+    <h2 class="dark:text-emerald-400 text-lg font-medium text-emerald-600">{{project.name}} | {{project.year}}</h2>
     <h2 class="text-sm">{{project.role}}</h2>
 
-    <p class="leading-relaxed mb-auto mt-3 w-full ">{{project.description}}</p>
+    <p class="mb-auto mt-3 w-full leading-relaxed ">{{project.description}}</p>
 
-    <div class="flex gap-2 justify-end mt-auto">
-      <span class="border-slate-500 rounded-full px-3 border-2" *ngFor="let stack of project.stack">{{stack}}</span>
+    <div class="mt-auto flex justify-end gap-2">
+      <span class="rounded-full border-2 border-slate-500 px-3" *ngFor="let stack of project.stack">{{stack}}</span>
     </div>
     <hr class="my-2">
 
-    <div class="gap-2 flex sm:self-start self-center pt-3 pb-5">
+    <div class="flex gap-2 self-center pb-5 pt-3 sm:self-start">
         <a
           aria-label="github repository"
-          href="" class="text-white flex text-xl pointer-events-auto">
+          href="" class="pointer-events-auto flex text-xl text-white">
           <div
-            class="transition-scale transition-transform duration-500 ease-in-out bg-emerald-500 hover:duration-200 hover:delay-0 hover:bg-emerald-600 dark:bg-emerald-600 hover:dark:bg-emerald-700 flex justify-center items-center w-[3rem] h-[3rem] rounded-full"
+            class="transition-scale dark:bg-emerald-600 hover:dark:bg-emerald-700 flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-emerald-500 transition-transform duration-500 ease-in-out hover:bg-emerald-600 hover:delay-0 hover:duration-200"
           >
               <span class="iconify mingcute--github-fill"></span>
           </div>
