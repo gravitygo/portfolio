@@ -1,28 +1,26 @@
 <nav
   [ngClass]="{
     'bg-transparent py-4': !getScrolled(),
-    'backdrop-blur-md py-2 drop-shadow-lg': getScrolled()
+    'backdrop-blur-md py-2 drop-shadow-lg': getScrolled(),
   }"
 >
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
+      <div
+        class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between"
+      >
         <div class="flex flex-shrink-0 items-center">
-          <img
-            class="h-[40px] select-none"
-            src="assets/logo.svg"
-            alt="logo"
-          >
+          <img class="h-[40px] select-none" src="assets/logo.svg" alt="logo" />
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a
-              class="uppercase text-neutral-900 hover:text-neutral-700 dark:text-neutral-50 dark:hover:text-neutral-200"
-              *ngFor = "let nav of links"
-              [routerLink] = "nav.nav"
+              class="cursor-pointer uppercase text-neutral-900 hover:text-neutral-700 dark:text-neutral-50 dark:hover:text-neutral-200"
+              *ngFor="let nav of links"
+              (click)="onClick(nav.fragment)"
             >
-              {{nav.link}}
+              {{ nav.link }}
             </a>
             <button
               class="sm-hidden"
@@ -50,11 +48,7 @@
                 </svg>
               </span>
               <span class="hidden dark:inline">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  class="w-6 h-6"
-                >
+                <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -96,7 +90,8 @@
           -->
           <svg
             class="block h-6 w-6"
-            fill="none" viewBox="0 0 24 24"
+            fill="none"
+            viewBox="0 0 24 24"
             stroke-width="1.5"
             aria-hidden="true"
           >
@@ -107,7 +102,6 @@
               class="stroke-neutral-900 hover:stroke-neutral-700 dark:stroke-neutral-50 dark:hover:stroke-neutral-200"
             />
           </svg>
-
         </button>
         <button
           class="sm-hidden p-2"
@@ -135,11 +129,7 @@
             </svg>
           </span>
           <span class="hidden dark:inline">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              class="w-6 h-6"
-            >
+            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
               <path
                 fill-rule="evenodd"
                 clip-rule="evenodd"
@@ -168,23 +158,23 @@
     class="sm:hidden transition-all duration-300 ease-in-out transform overflow-hidden"
     [ngClass]="{
       'opacity-0 h-0 translate-y-[-20px] scale-95': !getMenu(),
-      'opacity-100 h-auto translate-y-0 scale-100': getMenu()
+      'opacity-100 h-auto translate-y-0 scale-100': getMenu(),
     }"
     id="mobile-menu"
   >
     <div class="space-y-1 px-2 pb-3 pt-2">
       <a
         class="block text-center uppercase text-neutral-900 hover:text-neutral-700 dark:text-neutral-50 dark:hover:text-neutral-200"
-        *ngFor = "let nav of links"
-        [routerLink] = "nav.nav"
+        *ngFor="let nav of links"
+        (click)="onClick(nav.fragment)"
       >
-        {{nav.link}}
+        {{ nav.link }}
       </a>
     </div>
     <hr
       class="mx-auto w-80 border-gray-400"
       [ngClass]="{
-        'border-transparent': getScrolled()
+        'border-transparent': getScrolled(),
       }"
     />
   </div>

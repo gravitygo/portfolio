@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-project-entry',
@@ -16,5 +16,18 @@ export class ProjectEntryComponent {
     stack: string[],
   }
   @Input() index: number = 0;
+  @ViewChild('projectEntry') observedElement!: ElementRef;
 
+  inView: boolean = false;
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.inView = true
+        }
+      });
+    });
+    observer.observe(this.observedElement.nativeElement)
+  }
 }
