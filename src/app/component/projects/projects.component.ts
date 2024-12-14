@@ -17,6 +17,7 @@ export class ProjectsComponent {
     name: string;
     role: string;
     path: string;
+    github: string;
     year: number;
     description: string;
     stack: string[];

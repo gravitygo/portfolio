@@ -38,13 +38,13 @@
       </h2>
       <h2 class="text-sm">{{ project.role }}</h2>
 
-      <p class="mb-auto mt-3 w-fill h-fill leading-relaxed">
+      <p class="mb-auto mt-3 w-fill h-fill leading-relaxed mb-auto">
         {{ project.description }}
       </p>
 
-      <div class="mt-auto flex justify-end gap-2">
+      <div class="mt-4 flex flex-wrap justify-end gap-2">
         <span
-          class="rounded-full border-2 border-slate-500 px-3"
+          class="text-sm rounded-full border-2 border-slate-500 px-3"
           *ngFor="let stack of project.stack"
           >{{ stack }}</span
         >
@@ -60,14 +60,12 @@
           <div
             class="transition-scale dark:bg-emerald-600 hover:dark:bg-emerald-700 flex h-[3rem] w-[3rem] items-center justify-center rounded-full bg-emerald-500 transition-transform duration-500 ease-in-out hover:bg-emerald-600 hover:delay-0 hover:duration-200"
           >
-            <span class="iconify mingcute--github-fill"></span>
+            <a [href]="project.github"
+              ><span class="iconify mingcute--github-fill"></span
+            ></a>
           </div>
         </a>
       </div>
     </div>
   </div>
 </div>
-
-<!--
-            [ngClass]="{'scale-100 translate-x-0': inView, 'scale-0 -translate-x-[3rem]': !inView}"
--->
