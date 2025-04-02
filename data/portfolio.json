@@ -1,0 +1,148 @@
+{
+  "hero": {
+    "name": "GravityGo",
+    "title": "Hi, I'm Chyle",
+    "subtitle": "Full-Stack Developer | Backend Engineer | Cloud & AI Enthusiast",
+    "typingTexts": [
+      "Full-Stack Developer",
+      "Backend Engineer",
+      "Cloud & AI Enthusiast",
+      "DevOps Practitioner"
+    ],
+    "description": "I specialize in building reliable, secure, and scalable systems — from backend APIs to intelligent cloud-native solutions.",
+    "ctaText": "View Projects",
+    "ctaLink": "#projects"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Crafting impactful cloud-native systems with AI, data, and code",
+    "description": "I'm a passionate Full-Stack Developer with a backend and cloud focus, blending scalable architecture, automation, and intelligent data solutions. From robust APIs to AI-enhanced apps, I’m committed to clean code, DevOps principles, and Agile collaboration. Currently exploring the intersection of AI and cloud systems to build smarter, data-driven applications.",
+    "image": "/images/profile.jpg"
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Tech I use to build real-world impact",
+    "categories": [
+      {
+        "name": "Languages & Frameworks",
+        "skills": [
+          "Java",
+          "JavaScript",
+          "TypeScript",
+          "Python",
+          "Spring Boot",
+          "Node.js",
+          "Express.js",
+          "Ruby on Rails"
+        ]
+      },
+      {
+        "name": "Databases",
+        "skills": ["PostgreSQL", "MySQL", "DynamoDB", "Supabase", "Snowflake"]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "skills": [
+          "AWS (Lambda, EC2, S3, API Gateway)",
+          "Azure",
+          "GitHub Actions",
+          "Docker",
+          "Kubernetes",
+          "AWS CDK"
+        ]
+      },
+      {
+        "name": "Testing & Tools",
+        "skills": [
+          "Postman",
+          "CI/CD pipelines",
+          "OAuth 2.0",
+          "JWT",
+          "IAM",
+          "Git",
+          "Figma",
+          "Cursor AI",
+          "VS Code",
+          "Jira"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Solving real problems with tech",
+    "projects": [
+      {
+        "title": "OnYou",
+        "description": "Developed an AI-powered web scraper to enhance a size-fitting model, resulting in a 40% increase in model accuracy and a significant reduction in product returns for merchants.",
+        "image": "/projects/OnYou.webp",
+        "skills": [
+          "NextJS",
+          "Node.js",
+          "AWS CDK",
+          "OpenAI",
+          "Claude Anthropic",
+          "Amazon Bedrock",
+          "Puppeteer"
+        ]
+      },
+      {
+        "title": "Practrack",
+        "description": "AI-assisted practicum management system to assess partner companies and automate student paperwork, reducing admin workload by 50%.",
+        "github": "https://github.com/username/project6",
+        "image": "/projects/Practrack.png",
+        "skills": ["Angular", "Node.js", "Supabase", "OpenAI"]
+      },
+      {
+        "title": "Profs To Pick",
+        "description": "Course selection tool that scores professors based on student feedback; built full backend architecture and database logic.",
+        "image": "/projects/ProfsToPick.png",
+        "skills": ["Node.js", "MySQL"]
+      },
+      {
+        "title": "PlantMate",
+        "description": "E-commerce app with real-time product tracking and analytics for plant resellers and enthusiasts.",
+        "image": "/projects/PlantMate.png",
+        "skills": ["Kotlin", "Firebase"]
+      },
+      {
+        "title": "Diner",
+        "description": "An inventory management system for diners with a built-in analytics suggestor. Uses MACD and regression-based models within a Node.js backend to recommend optimal stock levels. Built with Handlebars for templating and MySQL for persistent data storage.",
+        "image": "/projects/Diner.png",
+        "skills": [
+          "Node.js",
+          "Express",
+          "Handlebars",
+          "MySQL",
+          "Data Analytics",
+          "MACD",
+          "Regression Models"
+        ]
+      },
+      {
+        "title": "AnimalChess",
+        "description": "Java-based implementation of the classic Animal Chess board game using OOP principles and Java Swing for GUI. Developed as part of a coursework project.",
+        "image": "/projects/AnimalChess.png",
+        "skills": ["Java", "Java Swing", "OOP"]
+      },
+      {
+        "title": "GravitySmash",
+        "description": "A 2D platformer game with tileable levels and customizable stage design. Built using Java and object-oriented design principles.",
+        "image": "/projects/GravitySmash.png",
+        "skills": ["Java", "Game Development", "OOP", "Custom Physics"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let’s build something meaningful together.",
+    "email": "chyle.andrei.lee@gmail.com",
+    "social": {
+      "github": "https://github.com/gravitygo",
+      "linkedin": "https://linkedin.com/in/chyle-lee",
+      "twitter": "",
+      "email": "chyle.andrei.lee@gmail.com"
+    }
+  },
+  "resume": "/lee-chyle-andrei-resume.pdf"
+}
