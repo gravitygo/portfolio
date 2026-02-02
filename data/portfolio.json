@@ -2,21 +2,24 @@
   "hero": {
     "name": "GravityGo",
     "title": "Hi, I'm Chyle",
-    "subtitle": "Full-Stack Developer | Backend Engineer | Cloud & AI Enthusiast",
+    "subtitle": "Cloud & Platform Engineer | Distributed Systems | Full-Stack Developer | Azure & Edge | Cloud & AI Enthusiast",
     "typingTexts": [
+      "Cloud & Platform Engineer",
+      "Distributed Systems Engineer",
+      "Azure & Edge Computing",
       "Full-Stack Developer",
       "Backend Engineer",
       "Cloud & AI Enthusiast",
       "DevOps Practitioner"
     ],
-    "description": "I specialize in building reliable, secure, and scalable systems — from backend APIs to intelligent cloud-native solutions.",
+    "description": "I specialize in building reliable, secure, and scalable systems — from backend APIs to intelligent cloud-native and cloud-to-edge solutions. I ship offline-first deployments, microservice platforms, and AI-assisted developer tooling with clean architecture and rollback-safe delivery.",
     "ctaText": "View Projects",
     "ctaLink": "#projects"
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Crafting impactful cloud-native systems with AI, data, and code",
-    "description": "I'm a passionate Full-Stack Developer with a backend and cloud focus, blending scalable architecture, automation, and intelligent data solutions. From robust APIs to AI-enhanced apps, I’m committed to clean code, DevOps principles, and Agile collaboration. Currently exploring the intersection of AI and cloud systems to build smarter, data-driven applications.",
+    "subtitle": "Crafting cloud-to-edge platforms and AI-native systems with clean architecture",
+    "description": "I'm a Cloud & Platform Engineer with a backend-first mindset, building distributed microservice systems across cloud and edge environments. I focus on offline-first deployments, API-driven orchestration, CI/CD automation, and cloud security fundamentals. I also build AI-enhanced developer and knowledge tooling (RAG pipelines, document + image ingestion, semantic search) to help teams move faster with better quality. I care deeply about clean code, DevOps discipline, and scalable system design.",
     "image": "/images/profile.jpg"
   },
   "skills": {
@@ -26,6 +29,8 @@
       {
         "name": "Languages & Frameworks",
         "skills": [
+          "C#",
+          ".NET",
           "Java",
           "JavaScript",
           "TypeScript",
@@ -33,37 +38,78 @@
           "Spring Boot",
           "Node.js",
           "Express.js",
-          "Ruby on Rails"
+          "Ruby on Rails",
+          "React",
+          "Next.js",
+          "Angular"
         ]
       },
       {
         "name": "Databases",
-        "skills": ["PostgreSQL", "MySQL", "DynamoDB", "Supabase", "Snowflake"]
+        "skills": [
+          "PostgreSQL",
+          "MySQL",
+          "DynamoDB",
+          "Supabase",
+          "Snowflake",
+          "Vector Databases"
+        ]
       },
       {
         "name": "Cloud & DevOps",
         "skills": [
-          "AWS (Lambda, EC2, S3, API Gateway)",
           "Azure",
+          "AWS (Lambda, EC2, S3, API Gateway)",
+          "Edge Computing (Zededa)",
           "GitHub Actions",
+          "Azure DevOps",
           "Docker",
           "Kubernetes",
-          "AWS CDK"
+          "Terraform",
+          "AWS CDK",
+          "CI/CD",
+          "Infrastructure as Code (IaC)"
+        ]
+      },
+      {
+        "name": "Backend & Systems",
+        "skills": [
+          "Microservices",
+          "Distributed Systems",
+          "gRPC",
+          "REST APIs",
+          "API Gateways",
+          "Event-Driven Systems",
+          "Service-to-Service Communication",
+          "Cloud Networking",
+          "Cloud Security",
+          "Observability"
+        ]
+      },
+      {
+        "name": "AI & Data",
+        "skills": [
+          "RAG Pipelines",
+          "LLM Integration (OpenAI, Claude)",
+          "Document & Image Ingestion",
+          "Retrieval Systems",
+          "Semantic Search"
         ]
       },
       {
         "name": "Testing & Tools",
         "skills": [
           "Postman",
-          "CI/CD pipelines",
           "OAuth 2.0",
           "JWT",
           "IAM",
           "Git",
+          "Linux",
           "Figma",
           "Cursor AI",
           "VS Code",
-          "Jira"
+          "Jira",
+          "CI/CD pipelines"
         ]
       }
     ]
@@ -73,8 +119,51 @@
     "subtitle": "Solving real problems with tech",
     "projects": [
       {
+        "title": "FinBot",
+        "description": "Telegram-based stock shortlisting bot that screens equities using rule-based and data-driven signals. Built with a Python backend and deployed on Azure using a serverless-first architecture to handle scheduled scans, user commands, and data ingestion with low operational overhead.",
+        "image": "/projects/FinBot.png",
+        "skills": [
+          "Python",
+          "Azure Functions",
+          "Azure Storage",
+          "Azure First Architecture",
+          "Telegram Bot API",
+          "IBKR Flex Query",
+          "Financial Data Analysis",
+          "Automation"
+        ]
+      },
+      {
+        "title": "NexusAI",
+        "description": "Enterprise knowledge retrieval platform using RAG for document and image search. Built ingestion + embedding pipelines and semantic retrieval services for low-latency search across operational and technical knowledge.",
+        "image": "/projects/NexusAI.png",
+        "skills": [
+          "React",
+          ".NET",
+          "Azure",
+          "gRPC",
+          "RAG Pipelines",
+          "Document Ingestion",
+          "Image Ingestion",
+          "Vector Databases",
+          "Semantic Search"
+        ]
+      },
+      {
+        "title": "ManilaBot",
+        "description": "AI-powered pull request reviewer with CodeRabbit-level depth that performs context-aware analysis of code diffs across files. Goes beyond linting by reasoning about logic changes, architectural impact, security implications, and edge cases. Generates inline remediation guidance, highlights cross-file risks, and produces per-PR review-time estimates to support accurate triage and prioritization.",
+        "image": "/projects/ManilaBot.png",
+        "skills": [
+          "Node.js",
+          "Azure DevOps",
+          "Azure Logic Apps",
+          "LLM Integration",
+          "Automation"
+        ]
+      },
+      {
         "title": "OnYou",
-        "description": "Developed an AI-powered web scraper to enhance a size-fitting model, resulting in a 40% increase in model accuracy and a significant reduction in product returns for merchants.",
+        "description": "Developed an AI-powered web scraper to enhance a size-fitting model, improving data quality and boosting model accuracy. Integrated LLMs for merchant persona inference and product classification to reduce manual labeling and improve downstream fit recommendations.",
         "image": "/projects/OnYou.webp",
         "skills": [
           "NextJS",
@@ -141,8 +230,9 @@
       "github": "https://github.com/gravitygo",
       "linkedin": "https://linkedin.com/in/chyle-lee",
       "twitter": "",
-      "email": "chyle.andrei.lee@gmail.com"
+      "email": "chyle.andrei.lee@gmail.com",
+      "website": "https://www.gravitygo.space"
     }
   },
-  "resume": "/lee-chyle-andrei-resume.pdf"
+  "resume": "/Chyle_Lee_Cloud_Platform_Engineer.pdf"
 }
